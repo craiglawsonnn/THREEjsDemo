@@ -103,18 +103,12 @@
     ],
     "images" : [
         {
-            "mimeType" : "image/jpeg",
-            "name" : "Craig_baseColors",
             "uri" : "textures/Craig_baseColors.jpg"
         },
         {
-            "mimeType" : "image/jpeg",
-            "name" : "Craig_normal",
             "uri" : "textures/Craig_normal.jpg"
         },
         {
-            "mimeType" : "image/jpeg",
-            "name" : "depth",
             "uri" : "textures/depth.jpg"
         }
     ],
