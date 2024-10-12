@@ -104,18 +104,18 @@
     "images" : [
         {
             "mimeType" : "image/jpeg",
-            "name" : "Image_0",
-            "uri" : "Image_0.jpg"
+            "name" : "Craig_baseColors",
+            "uri" : "textures/Craig_baseColors.jpg"
         },
         {
             "mimeType" : "image/jpeg",
-            "name" : "Image_1",
-            "uri" : "Image_1.jpg"
+            "name" : "Craig_normal",
+            "uri" : "textures/Craig_normal.jpg"
         },
         {
             "mimeType" : "image/jpeg",
-            "name" : "Image_2",
-            "uri" : "Image_2.jpg"
+            "name" : "depth",
+            "uri" : "textures/depth.jpg"
         }
     ],
     "accessors" : [
@@ -179,7 +179,7 @@
     "buffers" : [
         {
             "byteLength" : 5399892,
-            "uri" : "untitled.bin"
+            "uri" : "scene.bin"
         }
     ]
 }
