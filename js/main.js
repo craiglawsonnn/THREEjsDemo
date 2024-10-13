@@ -48,7 +48,7 @@ loader.load(
           map: baseColor,
           normalMap: normalMap,
           displacementMap: depthMap,
-          displacementScale: 0.1,  // Adjust the scale based on your depth map
+          displacementScale: 0.01,  // Adjust the scale based on your depth map
         });
       }
     });
@@ -72,7 +72,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = 2;  // Move the camera closer to the model
+camera.position.z = 5;  // Move the camera closer to the model
 
 //Add lights to the scene, so we can actually see the 3D model
 const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
@@ -95,7 +95,7 @@ function animate() {
 
   // Rotate the object continuously
   object.rotation.x += 0.01;
-  object.rotation.y += 0.01;
+  object.rotation.y += 0.001;
 
   // //Make the eye move
   // if (object && objToRender === "Craig") {
