@@ -48,7 +48,7 @@ loader.load(
           map: baseColor,
           normalMap: normalMap,
           displacementMap: depthMap,
-          displacementScale: 0.01,  // Adjust the scale based on your depth map
+          displacementScale: 0.001,  // Adjust the scale based on your depth map
         });
       }
     });
@@ -94,8 +94,8 @@ function animate() {
   //Here we could add some code to update the scene, adding some automatic movement
 
   // Rotate the object continuously
-  object.rotation.x += 0.01;
-  object.rotation.y += 0.001;
+  object.rotation.x += 0.001;
+  object.rotation.y += 0.01;
 
   // //Make the eye move
   // if (object && objToRender === "Craig") {
