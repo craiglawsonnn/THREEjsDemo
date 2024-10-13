@@ -48,7 +48,7 @@ loader.load(
           map: baseColor,
           normalMap: normalMap,
           displacementMap: depthMap,
-          displacementScale: 0.001,  // Adjust the scale based on your depth map
+          displacementScale: 0,  // Adjust the scale based on your depth map
         });
       }
     });
@@ -93,16 +93,9 @@ function animate() {
   requestAnimationFrame(animate);
   //Here we could add some code to update the scene, adding some automatic movement
 
-  // Rotate the object continuously
-  object.rotation.x += 0.001;
-  object.rotation.y += 0.01;
+  // Rotate the object continuously for turntable effect
+  object.rotation.y += 0.001;
 
-  // //Make the eye move
-  // if (object && objToRender === "Craig") {
-  //   //I've played with the constants here until it looked good 
-  //   //object.rotation.y = -3 + mouseX / window.innerWidth * 3;
-  //   //object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
-  // }
   renderer.render(scene, camera);
 }
 
