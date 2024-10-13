@@ -23,7 +23,13 @@ let controls;
 //Set which object to render
 let objToRender = 'Craig';
 
+// Load textures using TextureLoader
+const textureLoader = new THREE.TextureLoader();
+const baseColor = textureLoader.load('models/Craig/textures/Craig_baseColors.jpg');
+const normalMap = textureLoader.load('models/Craig/textures/Craig_normal.jpg');
+const depthMap = textureLoader.load('models/Craig/textures/depth.jpg');
 console.log(`models/${objToRender}/scene.gltf`);
+
 
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
@@ -34,6 +40,18 @@ loader.load(
   function (gltf) {
     //If the file is loaded, add it to the scene
     object = gltf.scene;
+    
+    // Traverse the loaded model and apply the material with textures
+    object.traverse((child) => {
+      if (child.isMesh) {
+        child.material = new THREE.MeshStandardMaterial({
+          map: baseColor,
+          normalMap: normalMap,
+          displacementMap: depthMap,
+          displacementScale: 0.1,  // Adjust the scale based on your depth map
+        });
+      }
+    });
     scene.add(object);
   },
   function (xhr) {
@@ -79,12 +97,12 @@ function animate() {
   object.rotation.x += 0.01;
   object.rotation.y += 0.01;
 
-  //Make the eye move
-  if (object && objToRender === "Craig") {
-    //I've played with the constants here until it looked good 
-    //object.rotation.y = -3 + mouseX / window.innerWidth * 3;
-    //object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
-  }
+  // //Make the eye move
+  // if (object && objToRender === "Craig") {
+  //   //I've played with the constants here until it looked good 
+  //   //object.rotation.y = -3 + mouseX / window.innerWidth * 3;
+  //   //object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
+  // }
   renderer.render(scene, camera);
 }
 
